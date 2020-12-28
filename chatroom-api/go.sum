@@ -212,6 +212,8 @@ github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:
 github.com/rogpeppe/go-internal v1.1.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
 github.com/rogpeppe/go-internal v1.2.2/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
 github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
+github.com/shizhongwang/myswagger v0.0.0-20201228121949-f29481c711dd h1:wWosgcCN6Jz5ZEWHv9yTOu1WuFIj9byxIY8KFNz8Bqw=
+github.com/shizhongwang/myswagger v0.0.0-20201228121949-f29481c711dd/go.mod h1:gp+Z9u29Wyj360rDGn36OLJTzy4Ypy2lInhXUXvUpF0=
 github.com/shizhongwang/myswagger/product-api v0.0.0-20201228114024-09b64b667544 h1:wwEYxqZx2rXWaWEtAYmNuHKGBNTV2NvBBspurQZ0yC8=
 github.com/shizhongwang/myswagger/product-api v0.0.0-20201228114024-09b64b667544/go.mod h1:Y61ermqsBZhl6qwq/RGc85hIShe++lM1xth5ofEEjJQ=
 github.com/sirupsen/logrus v1.4.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=

@@ -7,7 +7,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/hashicorp/go-hclog"
-	"github.com/shizhongwang/myswagger/Chatroom-api/data"
+	"github.com/shizhongwang/myswagger/chatroom-api/data"
 )
 
 // KeyChatroom is a key used for the Chatroom object in the context

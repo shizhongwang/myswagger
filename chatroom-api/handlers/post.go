@@ -15,10 +15,10 @@ import (
 //  501: errorResponse
 
 // Create handles POST requests to add new products
-func (p *Chatroom) Create(rw http.ResponseWriter, r *http.Request) {
+func (p *Chatrooms) Create(rw http.ResponseWriter, r *http.Request) {
 	// fetch the product from the context
-	prod := r.Context().Value(KeyProduct{}).(data.Product)
+	prod := r.Context().Value(KeyChatroom{}).(data.Chatroom)
 
 	p.l.Debug("Inserting product: %#v\n", prod)
-	p.productDB.AddProduct(prod)
+	p.ChatroomDB.AddChatroom(prod)
 }
