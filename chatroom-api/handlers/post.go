@@ -3,7 +3,7 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/shizhongwang/myswagger/product-api/data"
+	"github.com/shizhongwang/myswagger/chatroom-api/data"
 )
 
 // swagger:route POST /products products createProduct
@@ -15,7 +15,7 @@ import (
 //  501: errorResponse
 
 // Create handles POST requests to add new products
-func (p *Product) Create(rw http.ResponseWriter, r *http.Request) {
+func (p *Chatroom) Create(rw http.ResponseWriter, r *http.Request) {
 	// fetch the product from the context
 	prod := r.Context().Value(KeyProduct{}).(data.Product)
 
