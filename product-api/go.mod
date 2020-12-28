@@ -12,7 +12,7 @@ require (
 	github.com/gorilla/mux v1.7.3
 	github.com/hashicorp/go-hclog v0.12.1
 	github.com/nicholasjackson/env v0.6.0
-	github.com/shizhongwang/myswagger/currency v0.0.0-20200329100342-3c14bf3f378d
+	github.com/shizhongwang/myswagger/currency v0.0.0-20201228114024-09b64b667544
 	github.com/stretchr/testify v1.6.1
 	go.mongodb.org/mongo-driver v1.3.5 // indirect
 	golang.org/x/net v0.0.0-20200707034311-ab3426394381 // indirect
