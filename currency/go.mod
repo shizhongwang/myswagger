@@ -1,4 +1,4 @@
-module github.com/nicholasjackson/building-microservices-youtube/currency
+module github.com/shizhongwang/myswagger/currency
 
 go 1.13
 

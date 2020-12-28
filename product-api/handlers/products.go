@@ -7,7 +7,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/hashicorp/go-hclog"
-	"github.com/nicholasjackson/building-microservices-youtube/product-api/data"
+	"github.com/shizhongwang/myswagger/product-api/data"
 )
 
 // KeyProduct is a key used for the Product object in the context

@@ -10,8 +10,8 @@ import (
 	gohandlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	hclog "github.com/hashicorp/go-hclog"
-	"github.com/nicholasjackson/building-microservices-youtube/product-images/files"
-	"github.com/nicholasjackson/building-microservices-youtube/product-images/handlers"
+	"github.com/shizhongwang/myswagger/product-images/files"
+	"github.com/shizhongwang/myswagger/product-images/handlers"
 	"github.com/nicholasjackson/env"
 )
 

@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/hashicorp/go-hclog"
-	"github.com/nicholasjackson/building-microservices-youtube/currency/data"
-	protos "github.com/nicholasjackson/building-microservices-youtube/currency/protos/currency"
+	"github.com/shizhongwang/myswagger/currency/data"
+	protos "github.com/shizhongwang/myswagger/currency/protos/currency"
 )
 
 // Currency is a gRPC server it implements the methods defined by the CurrencyServer interface

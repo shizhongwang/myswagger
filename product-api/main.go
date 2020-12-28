@@ -14,9 +14,9 @@ import (
 
 	gohandlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
-	protos "github.com/nicholasjackson/building-microservices-youtube/currency/protos/currency"
-	"github.com/nicholasjackson/building-microservices-youtube/product-api/data"
-	"github.com/nicholasjackson/building-microservices-youtube/product-api/handlers"
+	protos "github.com/shizhongwang/myswagger/currency/protos/currency"
+	"github.com/shizhongwang/myswagger/product-api/data"
+	"github.com/shizhongwang/myswagger/product-api/handlers"
 	"github.com/nicholasjackson/env"
 )
 

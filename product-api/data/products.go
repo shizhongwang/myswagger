@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/hashicorp/go-hclog"
-	protos "github.com/nicholasjackson/building-microservices-youtube/currency/protos/currency"
+	protos "github.com/shizhongwang/myswagger/currency/protos/currency"
 )
 
 // ErrProductNotFound is an error raised when a product can not be found in the database

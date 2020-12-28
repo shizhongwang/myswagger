@@ -3,18 +3,15 @@ consumes:
 - application/json
 definitions:
   GenericError:
-    description: GenericError GenericError GenericError GenericError is a generic
-      error message returned by a server
+    description: GenericError is a generic error message returned by a server
     properties:
       message:
-        description: message
         type: string
         x-go-name: Message
     type: object
-    x-go-package: github.com/nicholasjackson/building-microservices-youtube/product-api/sdk/models
+    x-go-package: github.com/shizhongwang/myswagger/product-api/handlers
   Product:
-    description: Product Product Product Product defines the structure for an API
-      product
+    description: Product defines the structure for an API product
     properties:
       description:
         description: the description for this poduct
@@ -34,7 +31,7 @@ definitions:
         x-go-name: Name
       price:
         description: the price for the product
-        format: float
+        format: double
         minimum: 0.01
         type: number
         x-go-name: Price
@@ -48,19 +45,17 @@ definitions:
     - price
     - sku
     type: object
-    x-go-package: github.com/nicholasjackson/building-microservices-youtube/product-api/sdk/models
+    x-go-package: github.com/shizhongwang/myswagger/product-api/data
   ValidationError:
-    description: ValidationError ValidationError ValidationError ValidationError is
-      a collection of validation error messages
+    description: ValidationError is a collection of validation error messages
     properties:
       messages:
-        description: messages
         items:
           type: string
         type: array
         x-go-name: Messages
     type: object
-    x-go-package: github.com/nicholasjackson/building-microservices-youtube/product-api/sdk/models
+    x-go-package: github.com/shizhongwang/myswagger/product-api/handlers
 info:
   description: Documentation for Product API
   title: of Product API
