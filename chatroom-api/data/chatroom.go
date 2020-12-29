@@ -115,11 +115,11 @@ func (p *ChatroomsDB) UpdateChatroom(pr Chatroom) error {
 }
 
 // AddChatroom adds a new ChatroomRequest to the database
-func (p *ChatroomsDB) AddChatroom(pr Chatroom) {
+func (p *ChatroomsDB) AddChatroom(pr *Chatroom) {
 	// get the next id in sequence
 	maxID := ChatroomList[len(ChatroomList)-1].ID
 	pr.ID = maxID + 1
-	ChatroomList = append(ChatroomList, &pr)
+	ChatroomList = append(ChatroomList, pr)
 }
 
 // DeleteChatroom deletes a ChatroomRequest from the database
