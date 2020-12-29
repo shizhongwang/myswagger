@@ -21,4 +21,8 @@ func (p *Chatrooms) Create(rw http.ResponseWriter, r *http.Request) {
 
 	p.l.Debug("Inserting chatroom: %#v\n", prod)
 	p.ChatroomDB.AddChatroom(prod)
+
+	p.ChatroomDB.AddChatroom( Chatroom: Chatroom{
+		ChatroomRequest: ChatroomRequest{Name:"chatroom02"},
+	},)
 }

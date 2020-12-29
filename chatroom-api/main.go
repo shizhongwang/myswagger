@@ -9,11 +9,9 @@ import (
 	"time"
 
 	"github.com/go-openapi/runtime/middleware"
-	"github.com/hashicorp/go-hclog"
-	"google.golang.org/grpc"
-
 	gohandlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
+	"github.com/hashicorp/go-hclog"
 	"github.com/nicholasjackson/env"
 	"github.com/shizhongwang/myswagger/chatroom-api/data"
 	"github.com/shizhongwang/myswagger/chatroom-api/handlers"
@@ -27,12 +25,12 @@ func main() {
 
 	l := hclog.Default()
 
-	conn, err := grpc.Dial("localhost:9092", grpc.WithInsecure())
-	if err != nil {
-		panic(err)
-	}
-
-	defer conn.Close()
+	//conn, err := grpc.Dial("localhost:9092", grpc.WithInsecure())
+	//if err != nil {
+	//	panic(err)
+	//}
+	//
+	//defer conn.Close()
 
 	// create database instance
 	db := data.NewChatroomsDB(l)
