@@ -14,11 +14,9 @@ import (
 
 	gohandlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
-	protos "github.com/shizhongwang/myswagger/currency/protos/currency"
-	"github.com/shizhongwang/myswagger/product-api/data"
-	"github.com/shizhongwang/myswagger/product-api/handlers"
 	"github.com/nicholasjackson/env"
-
+	"github.com/shizhongwang/myswagger/chatroom-api/data"
+	"github.com/shizhongwang/myswagger/chatroom-api/handlers"
 )
 
 var bindAddress = env.String("BIND_ADDRESS", false, ":9090", "Bind address for the server")
@@ -28,7 +26,6 @@ func main() {
 	env.Parse()
 
 	l := hclog.Default()
-	v := data.NewValidation()
 
 	conn, err := grpc.Dial("localhost:9092", grpc.WithInsecure())
 	if err != nil {
@@ -37,36 +34,33 @@ func main() {
 
 	defer conn.Close()
 
-	// create client
-	cc := protos.NewCurrencyClient(conn)
-
 	// create database instance
-	db := data.NewProductsDB(cc, l)
+	db := data.NewChatroomsDB(l)
 
 	// create the handlers
-	ph := handlers.NewProducts(l, v, db)
+	ph := handlers.NewChatrooms(l, db)
 
 	// create a new serve mux and register the handlers
 	sm := mux.NewRouter()
 
 	// handlers for API
 	getR := sm.Methods(http.MethodGet).Subrouter()
-	getR.HandleFunc("/products", ph.ListAll).Queries("currency", "{[A-Z]{3}}")
-	getR.HandleFunc("/products", ph.ListAll)
+	getR.HandleFunc("/chatrooms", ph.ListAll).Queries("currency", "{[A-Z]{3}}")
+	getR.HandleFunc("/chatrooms", ph.ListAll)
+	//
+	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListSingle).Queries("currency", "{[A-Z]{3}}")
+	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListSingle)
+	//
+	//putR := sm.Methods(http.MethodPut).Subrouter()
+	//putR.HandleFunc("/chatrooms", ph.Update)
+	//putR.Use(ph.MiddlewareValidatechatroom)
 
-	getR.HandleFunc("/products/{id:[0-9]+}", ph.ListSingle).Queries("currency", "{[A-Z]{3}}")
-	getR.HandleFunc("/products/{id:[0-9]+}", ph.ListSingle)
+	//postR := sm.Methods(http.MethodPost).Subrouter()
+	//postR.HandleFunc("/chatrooms", ph.Create)
+	//postR.Use(ph.MiddlewareValidatechatroom)
 
-	putR := sm.Methods(http.MethodPut).Subrouter()
-	putR.HandleFunc("/products", ph.Update)
-	putR.Use(ph.MiddlewareValidateProduct)
-
-	postR := sm.Methods(http.MethodPost).Subrouter()
-	postR.HandleFunc("/products", ph.Create)
-	postR.Use(ph.MiddlewareValidateProduct)
-
-	deleteR := sm.Methods(http.MethodDelete).Subrouter()
-	deleteR.HandleFunc("/products/{id:[0-9]+}", ph.Delete)
+	//deleteR := sm.Methods(http.MethodDelete).Subrouter()
+	//deleteR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.Delete)
 
 	// handler for documentation
 	opts := middleware.RedocOpts{SpecURL: "/swagger.yaml"}
