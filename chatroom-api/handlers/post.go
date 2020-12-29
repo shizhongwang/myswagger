@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/shizhongwang/myswagger/chatroom-api/data"
 )
@@ -20,9 +21,13 @@ func (p *Chatrooms) Create(rw http.ResponseWriter, r *http.Request) {
 	prod := r.Context().Value(KeyChatroom{}).(data.ChatroomRequest)
 
 	p.l.Debug("Inserting chatroom: %#v\n", prod)
-	p.ChatroomDB.AddChatroom(prod)
 
-	p.ChatroomDB.AddChatroom( Chatroom: Chatroom{
-		ChatroomRequest: ChatroomRequest{Name:"chatroom02"},
+	p.ChatroomDB.AddChatroom( data.Chatroom{
+		ChatroomRequest: data.ChatroomRequest{
+			Name:"chatroom02",
+			Type: "normal type",
+		},
+		ID: 3,
+		CreatedAt: time.Now(),
 	},)
 }

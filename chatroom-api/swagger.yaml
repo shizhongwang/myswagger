@@ -61,12 +61,6 @@ definitions:
       header:
         type: string
         x-go-name: Header
-      id:
-        description: the id for the chatroom
-        format: int64
-        minimum: 1
-        type: integer
-        x-go-name: ID
       name:
         description: the name for the chatroom
         type: string

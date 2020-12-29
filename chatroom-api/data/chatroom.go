@@ -149,9 +149,11 @@ func findIndexByChatroomID(id int) int {
 var ChatroomList = []*Chatroom{
 	&Chatroom{
 		ChatroomRequest: ChatroomRequest{Name:"chatroom01"},
+		ID: 1,
 	},
 	&Chatroom{
 		ChatroomRequest: ChatroomRequest{Name:"chatroom02"},
+		ID: 2,
 	},
 }
 

@@ -53,8 +53,8 @@ func main() {
 	//putR.HandleFunc("/chatrooms", ph.Update)
 	//putR.Use(ph.MiddlewareValidatechatroom)
 
-	//postR := sm.Methods(http.MethodPost).Subrouter()
-	//postR.HandleFunc("/chatrooms", ph.Create)
+	postR := sm.Methods(http.MethodPost).Subrouter()
+	postR.HandleFunc("/chatrooms", ph.Create)
 	//postR.Use(ph.MiddlewareValidatechatroom)
 
 	//deleteR := sm.Methods(http.MethodDelete).Subrouter()
