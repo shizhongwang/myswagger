@@ -38,8 +38,14 @@ func main() {
 	// create the handlers
 	ph := handlers.NewChatrooms(l, db)
 
+	//router.POST("/somePost", posting)
+	//router.PUT("/somePut", putting)
+	//router.DELETE("/someDelete", deleting)
+
 	router := gin.Default()
 	router.POST("/chatrooms", ph.Create)
+	router.PUT("/chatrooms", ph.Update)
+	router.DELETE("/chatrooms/:id", ph.Delete)
 	router.GET("/chatrooms", ph.ListAll)
 	router.GET("/chatrooms/:id", ph.ListSingle)
 	router.Run(":8080")

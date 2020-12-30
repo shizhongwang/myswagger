@@ -44,15 +44,6 @@ type Chatroom struct {
 	CreatorUserID	string	`json:"created_userid,omitempty"`
 }
 
-type Mystruct struct {
-	ID int
-}
-type Mystruct1 struct {
-	Mystruct
-	CreatedAt     time.Time
-}
-
-
 // ErrChatroomNotFound is an error raised when a ChatroomRequest can not be found in the database
 var ErrChatroomNotFound = fmt.Errorf("ChatroomRequest not found")
 
@@ -65,16 +56,11 @@ type ChatroomsDB struct {
 
 func NewChatroomsDB(l hclog.Logger) *ChatroomsDB {
 	pb := &ChatroomsDB{l}
-
 	return pb
 }
 
 // GetChatrooms returns all Chatrooms from the database
-func (p *ChatroomsDB) GetChatrooms(currency string) (Chatrooms, error) {
-	if currency == "" {
-		return ChatroomList, nil
-	}
-
+func (p *ChatroomsDB) GetChatrooms() (Chatrooms, error) {
 	pr := Chatrooms{}
 	for _, p := range ChatroomList {
 		np := *p
@@ -129,8 +115,7 @@ func (p *ChatroomsDB) DeleteChatroom(id int) error {
 		return ErrChatroomNotFound
 	}
 
-	ChatroomList = append(ChatroomList[:i], ChatroomList[i+1])
-
+	ChatroomList = append(ChatroomList[:i], ChatroomList[i+1:]...)
 	return nil
 }
 
@@ -148,11 +133,17 @@ func findIndexByChatroomID(id int) int {
 
 var ChatroomList = []*Chatroom{
 	&Chatroom{
-		ChatroomRequest: ChatroomRequest{Name:"chatroom01"},
+		ChatroomRequest: ChatroomRequest{
+			Name:"chatroom01",
+			DisplayName: "Display name test1",
+		},
 		ID: 1,
 	},
 	&Chatroom{
-		ChatroomRequest: ChatroomRequest{Name:"chatroom02"},
+		ChatroomRequest: ChatroomRequest{
+			Name:"chatroom02",
+			DisplayName: "Display name test2",
+		},
 		ID: 2,
 	},
 }
@@ -167,12 +158,3 @@ var ChatroomList = []*Chatroom{
 ////部分成员初始化2
 //s3 := Student{Person: Person{name: "kavai"}, id: 3}
 //fmt.Println(s2, s3)
-
-var ChatroomList1 = []*Mystruct1{
-	&Mystruct1{
-		Mystruct : Mystruct{ID: 1},
-	},
-	&Mystruct1{
-		Mystruct : Mystruct{ID: 2},
-	},
-}

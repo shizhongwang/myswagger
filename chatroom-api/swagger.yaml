@@ -139,6 +139,24 @@ paths:
           $ref: '#/responses/errorResponse'
       tags:
       - chatrooms
+    put:
+      description: Update a chatrooms details
+      operationId: updateChatroom
+      parameters:
+      - description: Newly created chatroom
+        in: body
+        name: Body
+        schema:
+          $ref: '#/definitions/Chatroom'
+      responses:
+        "200":
+          $ref: '#/responses/chatroomResponse'
+        "404":
+          $ref: '#/responses/errorResponse'
+        "422":
+          $ref: '#/responses/errorValidation'
+      tags:
+      - chatrooms
   /chatrooms/{id}:
     get:
       description: Return a list of Chatrooms from the database

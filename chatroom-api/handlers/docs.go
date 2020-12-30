@@ -60,13 +60,21 @@ type chatroomResponseWrapper struct {
 type noContentResponseWrapper struct {
 }
 
-// swagger:parameters updateChatroom createChatroom
-type chatroomParamsWrapper struct {
+// swagger:parameters createChatroom
+type chatroomRequestParamsWrapper struct {
 	// ChatroomRequest data structure to Update or Create.
 	// Note: the id field is ignored by update and create operations
 	// in: body
 	// required: true
 	Body data.ChatroomRequest
+}
+
+// Data structure representing a single chatroom
+// swagger:parameters updateChatroom
+type chatroomParamsWrapper struct {
+	// Newly created chatroom
+	// in: body
+	Body data.Chatroom
 }
 
 // swagger:parameters listChatrooms listSingleChatroom

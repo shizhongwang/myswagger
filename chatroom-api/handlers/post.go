@@ -43,24 +43,3 @@ func (p *Chatrooms) Create(c *gin.Context) {
 	p.ChatroomDB.AddChatroom(cr)
 	c.JSON(http.StatusOK, cr)
 }
-
-// Create handles POST requests to add new chatrooms
-//func (p *Chatrooms) Create(rw http.ResponseWriter, r *http.Request) {
-//	buf := new(bytes.Buffer)
-//	buf.ReadFrom(r.Body)
-//	p.l.Info("create chatroom" + buf.String())
-//
-//	// fetch the chatroom from the context
-//	prod := r.Context().Value(KeyChatroom{}).(data.ChatroomRequest)
-//
-//	p.l.Debug("Inserting chatroom: %#v\n", prod)
-//
-//	p.ChatroomDB.AddChatroom( data.Chatroom{
-//		ChatroomRequest: data.ChatroomRequest{
-//			Name:"chatroom02",
-//			Type: "normal type",
-//		},
-//		ID: 3,
-//		CreatedAt: time.Now(),
-//	},)
-//}
