@@ -37,7 +37,7 @@ func (p *Chatrooms) Create(c *gin.Context) {
 			Name: "chatroom02",
 			Type: "normal type",
 		},
-		ID:        3,
+		ID: "3",
 		CreatedAt: time.Now(),
 	}
 

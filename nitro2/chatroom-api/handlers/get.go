@@ -4,7 +4,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/shizhongwang/myswagger/nitro2/chatroom-api/data"
 	"net/http"
-	"strconv"
 )
 
 // swagger:route GET /chatrooms chatrooms listChatrooms
@@ -33,8 +32,7 @@ func (p *Chatrooms) ListAll(c *gin.Context) {
 func (p *Chatrooms) ListSingle(c *gin.Context) {
 	id := c.Param("id")
 	p.l.Debug("Get record", "id", id)
-	idint, err := strconv.Atoi(id)
-	prod, err := p.ChatroomDB.GetChatroomByID(idint)
+	prod, err := p.ChatroomDB.GetChatroomByID(id)
 
 	switch err {
 	case nil:

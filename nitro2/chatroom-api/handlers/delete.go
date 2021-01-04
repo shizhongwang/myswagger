@@ -4,7 +4,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/shizhongwang/myswagger/nitro2/chatroom-api/data"
 	"net/http"
-	"strconv"
 )
 
 // swagger:route DELETE /chatrooms/{id} chatrooms deleteChatroom
@@ -18,10 +17,9 @@ import (
 // Delete handles DELETE requests and removes items from the database
 func (p *Chatrooms) Delete(c *gin.Context) {
 	id := c.Param("id")
-	idint, _ := strconv.Atoi(id)
 	p.l.Debug("Deleting record", "id", id)
 
-	err := p.ChatroomDB.DeleteChatroom(idint)
+	err := p.ChatroomDB.DeleteChatroom(id)
 	if err == data.ErrChatroomNotFound {
 		p.l.Error("Unable to delete record id does not exist", "error", err)
 		c.JSON(http.StatusNotFound, &GenericError{Message: err.Error()})

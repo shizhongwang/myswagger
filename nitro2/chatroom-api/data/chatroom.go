@@ -3,6 +3,7 @@ package data
 import (
 	"fmt"
 	"github.com/hashicorp/go-hclog"
+	"strconv"
 	"time"
 )
 
@@ -37,7 +38,7 @@ type Chatroom struct {
 	//
 	// required: false
 	// min: 1
-	ID          	int		`json:"id"`
+	ID          	string		`json:"id"`
 	ChatroomRequest
 	CreatedAt     time.Time	`json:"created_at,omitempty"`
 	UpdatedAt     time.Time	`json:"updated_at,omitempty"`
@@ -73,9 +74,9 @@ func (p *ChatroomsDB) GetChatrooms() (Chatrooms, error) {
 // GetChatroomByID returns a single ChatroomRequest which matches the id from the
 // database.
 // If a ChatroomRequest is not found this function returns a ChatroomNotFound error
-func (p *ChatroomsDB) GetChatroomByID(id int) (*Chatroom, error) {
+func (p *ChatroomsDB) GetChatroomByID(id string) (*Chatroom, error) {
 	i := findIndexByChatroomID(id)
-	if id == -1 {
+	if id == "" {
 		return nil, ErrChatroomNotFound
 	}
 
@@ -104,12 +105,13 @@ func (p *ChatroomsDB) UpdateChatroom(pr Chatroom) error {
 func (p *ChatroomsDB) AddChatroom(pr *Chatroom) {
 	// get the next id in sequence
 	maxID := ChatroomList[len(ChatroomList)-1].ID
-	pr.ID = maxID + 1
+	iMaxID, _ := strconv.Atoi(maxID)
+	pr.ID = strconv.Itoa(iMaxID + 1)
 	ChatroomList = append(ChatroomList, pr)
 }
 
 // DeleteChatroom deletes a ChatroomRequest from the database
-func (p *ChatroomsDB) DeleteChatroom(id int) error {
+func (p *ChatroomsDB) DeleteChatroom(id string) error {
 	i := findIndexByChatroomID(id)
 	if i == -1 {
 		return ErrChatroomNotFound
@@ -121,7 +123,7 @@ func (p *ChatroomsDB) DeleteChatroom(id int) error {
 
 // findIndex finds the index of a ChatroomRequest in the database
 // returns -1 when no ChatroomRequest can be found
-func findIndexByChatroomID(id int) int {
+func findIndexByChatroomID(id string) int {
 	for i, p := range ChatroomList {
 		if p.ID == id {
 			return i
@@ -137,14 +139,14 @@ var ChatroomList = []*Chatroom{
 			Name:"chatroom01",
 			DisplayName: "Display name test1",
 		},
-		ID: 1,
+		ID: "1",
 	},
 	&Chatroom{
 		ChatroomRequest: ChatroomRequest{
 			Name:"chatroom02",
 			DisplayName: "Display name test2",
 		},
-		ID: 2,
+		ID: "2",
 	},
 }
 
