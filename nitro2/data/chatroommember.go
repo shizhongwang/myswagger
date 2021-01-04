@@ -6,9 +6,9 @@ import (
 	"time"
 )
 
-// ChatroomMemeberRequest represents a muc chatroom request.
+// ChatroomMemberRequest represents a muc chatroom request.
 // swagger:model
-type ChatroomMemeberRequest struct {
+type ChatroomMemberRequest struct {
 	// the id for the user
 	//
 	// required: true
@@ -20,37 +20,37 @@ type ChatroomMemeberRequest struct {
 	Role	string	`json:"role"`
 }
 
-// ChatroomMemeberRequest represents a muc chatroom response.
+// ChatroomMemberRequest represents a muc chatroom response.
 // swagger:model
-type ChatroomMemeber struct {
+type ChatroomMember struct {
 	// the id for the chatroom
 	//
 	// required: false
 	// min: 1
 	ChatroomID          	string		`json:"chatroom_id"`
-	ChatroomMemeberRequest
+	ChatroomMemberRequest
 	UpdatedAt     time.Time	`json:"updated_at,omitempty"`
 }
 
-// ErrChatroomMemeberNotFound is an error raised when a ChatroomMemeberRequest can not be found in the database
-var ErrChatroomMemeberNotFound = fmt.Errorf("ChatroomMemeberRequest not found")
+// ErrChatroomMemberNotFound is an error raised when a ChatroomMemberRequest can not be found in the database
+var ErrChatroomMemberNotFound = fmt.Errorf("ChatroomMemberRequest not found")
 
-// ChatroomMemebers defines a slice of ChatroomMemeberRequest
-type ChatroomMemebers []*ChatroomMemeber
+// ChatroomMembers defines a slice of ChatroomMemberRequest
+type ChatroomMembers []*ChatroomMember
 
-type ChatroomMemebersDB struct {
+type ChatroomMembersDB struct {
 	log      hclog.Logger
 }
 
-func NewChatroomMemebersDB(l hclog.Logger) *ChatroomMemebersDB {
-	pb := &ChatroomMemebersDB{l}
+func NewChatroomMembersDB(l hclog.Logger) *ChatroomMembersDB {
+	pb := &ChatroomMembersDB{l}
 	return pb
 }
 
-// GetChatroomMemebers returns all ChatroomMemebers from the database
-func (p *ChatroomMemebersDB) GetChatroomMemebers() (ChatroomMemebers, error) {
-	pr := ChatroomMemebers{}
-	for _, p := range ChatroomMemeberList {
+// GetChatroomMembers returns all ChatroomMembers from the database
+func (p *ChatroomMembersDB) GetChatroomMembers() (ChatroomMembers, error) {
+	pr := ChatroomMembers{}
+	for _, p := range ChatroomMemberList {
 		np := *p
 		pr = append(pr, &np)
 	}
@@ -58,12 +58,12 @@ func (p *ChatroomMemebersDB) GetChatroomMemebers() (ChatroomMemebers, error) {
 	return pr, nil
 }
 
-// GetChatroomMemeberByID returns a single ChatroomMemeberRequest which matches the id from the
+// GetChatroomMemberByID returns a single ChatroomMemberRequest which matches the id from the
 // database.
-// If a ChatroomMemeberRequest is not found this function returns a ChatroomMemeberNotFound error
-func (p *ChatroomMemebersDB) GetChatroomMemebersByChatroomID(chatroomID string) (ChatroomMemebers, error) {
-	pr := ChatroomMemebers{}
-	for _, p := range ChatroomMemeberList {
+// If a ChatroomMemberRequest is not found this function returns a ChatroomMemberNotFound error
+func (p *ChatroomMembersDB) GetChatroomMembersByChatroomID(chatroomID string) (ChatroomMembers, error) {
+	pr := ChatroomMembers{}
+	for _, p := range ChatroomMemberList {
 		np := *p
 		if np.ChatroomID == chatroomID {
 			pr = append(pr, &np)
@@ -73,40 +73,40 @@ func (p *ChatroomMemebersDB) GetChatroomMemebersByChatroomID(chatroomID string) 
 	return pr, nil
 }
 
-// UpdateChatroomMemeber replaces a ChatroomMemeberRequest in the database with the given
+// UpdateChatroomMember replaces a ChatroomMemberRequest in the database with the given
 // item.
-// If a ChatroomMemeberRequest with the given id does not exist in the database
-// this function returns a ChatroomMemeberNotFound error
-func (p *ChatroomMemebersDB) UpdateChatroomMemeber(pr ChatroomMemeber) error {
+// If a ChatroomMemberRequest with the given id does not exist in the database
+// this function returns a ChatroomMemberNotFound error
+func (p *ChatroomMembersDB) UpdateChatroomMember(pr ChatroomMember) error {
 	i := 1
-	// update the ChatroomMemeberRequest in the DB
-	ChatroomMemeberList[i] = &pr
+	// update the ChatroomMemberRequest in the DB
+	ChatroomMemberList[i] = &pr
 
 	return nil
 }
 
-// AddChatroomMemeber adds a new ChatroomMemeberRequest to the database
-func (p *ChatroomMemebersDB) AddChatroomMemeber(pr *ChatroomMemeber) {
-	ChatroomMemeberList = append(ChatroomMemeberList, pr)
+// AddChatroomMember adds a new ChatroomMemberRequest to the database
+func (p *ChatroomMembersDB) AddChatroomMember(pr *ChatroomMember) {
+	ChatroomMemberList = append(ChatroomMemberList, pr)
 }
 
-// DeleteChatroomMemeber deletes a ChatroomMemeberRequest from the database
-func (p *ChatroomMemebersDB) DeleteChatroomMemeber(chatroonID string, userID string) error {
+// DeleteChatroomMember deletes a ChatroomMemberRequest from the database
+func (p *ChatroomMembersDB) DeleteChatroomMember(chatroonID string, userID string) error {
 	i := 1
-	ChatroomMemeberList = append(ChatroomMemeberList[:i], ChatroomMemeberList[i+1:]...)
+	ChatroomMemberList = append(ChatroomMemberList[:i], ChatroomMemberList[i+1:]...)
 	return nil
 }
 
-var ChatroomMemeberList = []*ChatroomMemeber{
-	&ChatroomMemeber{
-		ChatroomMemeberRequest: ChatroomMemeberRequest{
+var ChatroomMemberList = []*ChatroomMember{
+	&ChatroomMember{
+		ChatroomMemberRequest: ChatroomMemberRequest{
 			UserID:"1",
 			Role: "speaker",
 		},
 		ChatroomID: "1",
 	},
-	&ChatroomMemeber{
-		ChatroomMemeberRequest: ChatroomMemeberRequest{
+	&ChatroomMember{
+		ChatroomMemberRequest: ChatroomMemberRequest{
 			UserID:"2",
 			Role: "listener",
 		},
