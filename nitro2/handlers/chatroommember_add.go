@@ -32,12 +32,13 @@ func (p *ChatroomMember) Create(c *gin.Context) {
 
 	p.l.Debug("Inserting chatroomMember: %#v\n", json)
 
+	chatroomid := c.Param("chatroomid")
 	cr := &data.ChatroomMember{
 		ChatroomMemberRequest: data.ChatroomMemberRequest{
 			UserID: "3",
 			Role: "admin",
 		},
-		ChatroomID: "3",
+		ChatroomID: chatroomid,
 		UpdatedAt: time.Now(),
 	}
 

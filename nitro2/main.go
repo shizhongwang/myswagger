@@ -48,6 +48,13 @@ func main() {
 	router.DELETE("/chatrooms/:id", ph.Delete)
 	router.GET("/chatrooms", ph.ListAll)
 	router.GET("/chatrooms/:id", ph.ListSingle)
+
+//http://your-mattermost-url.com/api/v4/channels/{channel_id}/members
+
+	chatroommemberDB := data.NewChatroomMembersDB(l)
+	chatroommemberHandler := handlers.NewChatroomMembers(l,chatroommemberDB)
+	router.POST("/chatroom/:chatroomid/member", chatroommemberHandler.Create)
+
 	router.Run(":8080")
 
 	// create a new serve mux and register the handlers
