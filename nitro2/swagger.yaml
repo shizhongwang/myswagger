@@ -1,0 +1,230 @@
+basePath: /
+consumes:
+- application/json
+definitions:
+  Chatroom:
+    properties:
+      created_at:
+        format: date-time
+        type: string
+        x-go-name: CreatedAt
+      created_userid:
+        type: string
+        x-go-name: CreatorUserID
+      display_name:
+        description: the chatroom display_name
+        type: string
+        x-go-name: DisplayName
+      enabled:
+        type: boolean
+        x-go-name: Enabled
+      header:
+        type: string
+        x-go-name: Header
+      id:
+        description: the id for the chatroom
+        format: int64
+        minimum: 1
+        type: integer
+        x-go-name: ID
+      name:
+        description: the name for the chatroom
+        type: string
+        x-go-name: Name
+      purpose:
+        type: string
+        x-go-name: Purpose
+      type:
+        description: the chatroom type
+        type: string
+        x-go-name: Type
+      updated_at:
+        format: date-time
+        type: string
+        x-go-name: UpdatedAt
+    required:
+    - name
+    - display_name
+    - type
+    title: ChatroomRequest represents a muc chatroom response.
+    type: object
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/chatroom-member/data
+  ChatroomRequest:
+    properties:
+      display_name:
+        description: the chatroom display_name
+        type: string
+        x-go-name: DisplayName
+      enabled:
+        type: boolean
+        x-go-name: Enabled
+      header:
+        type: string
+        x-go-name: Header
+      name:
+        description: the name for the chatroom
+        type: string
+        x-go-name: Name
+      purpose:
+        type: string
+        x-go-name: Purpose
+      type:
+        description: the chatroom type
+        type: string
+        x-go-name: Type
+    required:
+    - name
+    - display_name
+    - type
+    title: ChatroomRequest represents a muc chatroom request.
+    type: object
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/chatroom-member/data
+  GenericError:
+    description: GenericError is a generic error message returned by a server
+    properties:
+      message:
+        type: string
+        x-go-name: Message
+    type: object
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/chatroom-api/handlers
+  ValidationError:
+    description: ValidationError is a collection of validation error messages
+    properties:
+      messages:
+        items:
+          type: string
+        type: array
+        x-go-name: Messages
+    type: object
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/chatroom-api/handlers
+info:
+  description: Documentation for ChatroomRequest API
+  title: of ChatroomRequest API
+  version: 1.0.0
+paths:
+  /chatrooms:
+    get:
+      description: Return a list of Chatrooms from the database
+      operationId: listChatrooms
+      parameters:
+      - description: |-
+          Currency used when returning the price of the chatroom,
+          when not specified currency is returned in GBP.
+        in: query
+        name: Currency
+        type: string
+      responses:
+        "200":
+          $ref: '#/responses/chatroomsResponse'
+      tags:
+      - chatrooms
+    post:
+      description: Create a new chatroom
+      operationId: createChatroom
+      parameters:
+      - description: |-
+          ChatroomRequest data structure to Update or Create.
+          Note: the id field is ignored by update and create operations
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/ChatroomRequest'
+      responses:
+        "200":
+          $ref: '#/responses/chatroomResponse'
+        "422":
+          $ref: '#/responses/errorValidation'
+        "501":
+          $ref: '#/responses/errorResponse'
+      tags:
+      - chatrooms
+    put:
+      description: Update a chatrooms details
+      operationId: updateChatroom
+      parameters:
+      - description: Newly created chatroom
+        in: body
+        name: Body
+        schema:
+          $ref: '#/definitions/Chatroom'
+      responses:
+        "200":
+          $ref: '#/responses/chatroomResponse'
+        "404":
+          $ref: '#/responses/errorResponse'
+        "422":
+          $ref: '#/responses/errorValidation'
+      tags:
+      - chatrooms
+  /chatrooms/{id}:
+    delete:
+      description: Update a chatrooms details
+      operationId: deleteChatroom
+      parameters:
+      - description: The id of the chatroom for which the operation relates
+        format: int64
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: ID
+      responses:
+        "201":
+          $ref: '#/responses/noContentResponse'
+        "404":
+          $ref: '#/responses/errorResponse'
+        "501":
+          $ref: '#/responses/errorResponse'
+      tags:
+      - chatrooms
+    get:
+      description: Return a list of Chatrooms from the database
+      operationId: listSingleChatroom
+      parameters:
+      - description: |-
+          Currency used when returning the price of the chatroom,
+          when not specified currency is returned in GBP.
+        in: query
+        name: Currency
+        type: string
+      - description: The id of the chatroom for which the operation relates
+        format: int64
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: ID
+      responses:
+        "200":
+          $ref: '#/responses/chatroomResponse'
+        "404":
+          $ref: '#/responses/errorResponse'
+      tags:
+      - chatrooms
+produces:
+- application/json
+responses:
+  chatroomResponse:
+    description: Data structure representing a single chatroom
+    schema:
+      $ref: '#/definitions/Chatroom'
+  chatroomsResponse:
+    description: A list of chatrooms
+    schema:
+      items:
+        $ref: '#/definitions/ChatroomRequest'
+      type: array
+  errorResponse:
+    description: Generic error message returned as a string
+    schema:
+      $ref: '#/definitions/GenericError'
+  errorValidation:
+    description: Validation errors defined as an array of strings
+    schema:
+      $ref: '#/definitions/ValidationError'
+  noContentResponse:
+    description: No content is returned by this API endpoint
+schemes:
+- http
+swagger: "2.0"
