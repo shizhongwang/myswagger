@@ -3,7 +3,7 @@ package handlers
 import (
 	"bytes"
 	"github.com/gin-gonic/gin"
-	"github.com/shizhongwang/myswagger/nitro2/chatroom-api/data"
+	"github.com/shizhongwang/myswagger/nitro2/data"
 	"io/ioutil"
 	"net/http"
 	"time"

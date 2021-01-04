@@ -16,7 +16,7 @@
 package handlers
 
 import (
-	"github.com/shizhongwang/myswagger/nitro2/chatroom-api/data"
+	"github.com/shizhongwang/myswagger/nitro2/data"
 )
 
 //

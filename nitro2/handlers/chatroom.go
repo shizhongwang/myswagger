@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/hashicorp/go-hclog"
-	"github.com/shizhongwang/myswagger/nitro2/chatroom-api/data"
+	"github.com/shizhongwang/myswagger/nitro2/data"
 )
 
 // Chatrooms handler for getting and updating Chatrooms
