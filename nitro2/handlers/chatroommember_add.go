@@ -10,37 +10,37 @@ import (
 )
 
 
-// swagger:route POST /chatrooms chatrooms createChatroom
-// Create a new chatroom
+// swagger:route POST /chatroomMembers chatroomMembers createChatroom
+// Create a new chatroomMember
 //
 // responses:
-//	200: chatroomResponse
+//	200: chatroomMemberResponse
 //  422: errorValidation
 //  501: errorResponse
-// Create handles POST requests to add new chatrooms
+// Create handles POST requests to add new chatroomMembers
 func (p *ChatroomMember) Create(c *gin.Context) {
 	//body中的内容 ioutil.ReadAll 读取过就不存在了, need to re-write into body
 	b, _ := ioutil.ReadAll(c.Request.Body)
 	c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(b))
-	p.l.Info("create chatroom" + string(b[:]))
+	p.l.Info("create chatroomMember" + string(b[:]))
 
-	var json data.ChatroomRequest
+	var json data.ChatroomMemberRequest
 	if err := c.ShouldBindJSON(&json); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	p.l.Debug("Inserting chatroom: %#v\n", json)
+	p.l.Debug("Inserting chatroomMember: %#v\n", json)
 
-	cr := &data.Chatroom{
-		ChatroomRequest: data.ChatroomRequest{
-			Name: "chatroom02",
-			Type: "normal type",
+	cr := &data.ChatroomMember{
+		ChatroomMemberRequest: data.ChatroomMemberRequest{
+			UserID: "3",
+			Role: "admin",
 		},
-		ID: "3",
-		CreatedAt: time.Now(),
+		ChatroomID: "3",
+		UpdatedAt: time.Now(),
 	}
 
-	p.ChatroomDB.AddChatroom(cr)
+	p.ChatroomMemberDB.AddChatroomMember(cr)
 	c.JSON(http.StatusOK, cr)
 }
