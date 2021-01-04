@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0165f36b-3fee-4e3b-b7e6-4d79328deeb5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/nitro2/chatroom-member/handlers/user_add.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nitro2/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nitro2/chatroom-member/data/chatroom.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/chatroom-member/data/chatroom.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nitro2/chatroom-member/handlers/user_add.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nitro2/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nitro2/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nitro2/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nitro2/nitro2" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/nitro2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nitro2/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/swagger.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.13.4/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1lzlWxF8zKZiN35qZ71b11NK1Rs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/chatroom-member" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/chatroom-member" />
+      <recent name="$PROJECT_DIR$/chatroom-api/handlers" />
+      <recent name="$PROJECT_DIR$/chatroom-api/data" />
+      <recent name="$PROJECT_DIR$/chatroom-api" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Nitro2/chatroom-member/handlers" />
+      <recent name="$PROJECT_DIR$/Nitro2" />
+      <recent name="$PROJECT_DIR$/chatroom-api/data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build github.com/shizhongwang/myswagger/chatroom-api (2)">
+    <configuration name="go build github.com/shizhongwang/myswagger/chatroom-api (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="myswagger" />
+      <working_directory value="$PROJECT_DIR$/nitro2/chatroom-api" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/chatroom-api/main.go" />
+      <package value="github.com/shizhongwang/myswagger/nitro2/chatroom-api" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/shizhongwang/myswagger/chatroom-api (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="myswagger" />
+      <working_directory value="$PROJECT_DIR$/Nitro2/chatroom-api" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/Nitro2/chatroom-api/main.go" />
+      <package value="github.com/shizhongwang/myswagger/chatroom-api" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/shizhongwang/myswagger/chatroom-api" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="building-microservices-youtube" />
+      <working_directory value="$PROJECT_DIR$/chatroom-api" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/chatroom-api/main.go" />
+      <package value="github.com/shizhongwang/myswagger/chatroom-api" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/shizhongwang/myswagger/product-api" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="building-microservices-youtube" />
+      <working_directory value="$PROJECT_DIR$/product-api" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/product-api/main.go" />
+      <package value="github.com/shizhongwang/myswagger/product-api" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="myswagger" />
+      <working_directory value="$PROJECT_DIR$/uuidgen" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/uuidgen/main.go" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build github.com/shizhongwang/myswagger/chatroom-api (2)" />
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build github.com/shizhongwang/myswagger/chatroom-api (1)" />
+        <item itemvalue="Go Build.go build github.com/shizhongwang/myswagger/chatroom-api" />
+        <item itemvalue="Go Build.go build github.com/shizhongwang/myswagger/product-api" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <proxy>https://goproxy.io,https://goproxy.cn,direct</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="425" y="164" key="#GOROOT" timestamp="1608607846121">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="425" y="164" key="#GOROOT/0.23.1680.981@0.23.1680.981" timestamp="1608607846121" />
+    <state x="425" y="153" key="#Go_Modules_(vgo)" timestamp="1608607855168">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="425" y="153" key="#Go_Modules_(vgo)/0.23.1680.981@0.23.1680.981" timestamp="1608607855168" />
+    <state x="425" y="153" key="#Notifications" timestamp="1609143916785">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="425" y="153" key="#Notifications/0.23.1680.981@0.23.1680.981" timestamp="1609143916785" />
+    <state x="530" y="297" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609321001897">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="530" y="297" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.981@0.23.1680.981" timestamp="1609321001897" />
+    <state x="521" y="131" key="#go_build_github.com/shizhongwang/myswagger/chatroom-api_(1)" timestamp="1609748698862">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="521" y="131" key="#go_build_github.com/shizhongwang/myswagger/chatroom-api_(1)/0.23.1680.981@0.23.1680.981" timestamp="1609748698862" />
+    <state x="532" y="123" key="#go_build_github.com/shizhongwang/myswagger/currency" timestamp="1609204024113">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="532" y="123" key="#go_build_github.com/shizhongwang/myswagger/currency/0.23.1680.981@0.23.1680.981" timestamp="1609204024113" />
+    <state x="521" y="123" key="#go_build_main.go" timestamp="1609740731257">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="521" y="123" key="#go_build_main.go/0.23.1680.981@0.23.1680.981" timestamp="1609740731257" />
+    <state x="580" y="259" key="EnvironmentVariablesDialog" timestamp="1609204004981">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="580" y="259" key="EnvironmentVariablesDialog/0.23.1680.981@0.23.1680.981" timestamp="1609204004981" />
+    <state width="1609" height="181" key="GridCell.Tab.0.bottom" timestamp="1609749038188">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state width="1609" height="181" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1609749038188" />
+    <state width="1609" height="181" key="GridCell.Tab.0.center" timestamp="1609749038187">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state width="1609" height="181" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1609749038187" />
+    <state width="1609" height="181" key="GridCell.Tab.0.left" timestamp="1609749038186">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state width="1609" height="181" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1609749038186" />
+    <state width="1609" height="181" key="GridCell.Tab.0.right" timestamp="1609749038187">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state width="1609" height="181" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1609749038187" />
+    <state width="1609" height="306" key="GridCell.Tab.1.bottom" timestamp="1609291615003">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state width="1609" height="306" key="GridCell.Tab.1.bottom/0.23.1680.981@0.23.1680.981" timestamp="1609291615003" />
+    <state width="1609" height="306" key="GridCell.Tab.1.center" timestamp="1609291615002">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state width="1609" height="306" key="GridCell.Tab.1.center/0.23.1680.981@0.23.1680.981" timestamp="1609291615002" />
+    <state width="1609" height="306" key="GridCell.Tab.1.left" timestamp="1609291615002">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state width="1609" height="306" key="GridCell.Tab.1.left/0.23.1680.981@0.23.1680.981" timestamp="1609291615002" />
+    <state width="1609" height="306" key="GridCell.Tab.1.right" timestamp="1609291615002">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state width="1609" height="306" key="GridCell.Tab.1.right/0.23.1680.981@0.23.1680.981" timestamp="1609291615002" />
+    <state x="577" y="205" key="RollbackChangesDialog" timestamp="1609143876007">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="577" y="205" key="RollbackChangesDialog/0.23.1680.981@0.23.1680.981" timestamp="1609143876007" />
+    <state x="327" y="126" key="SettingsEditor" timestamp="1609741199835">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="327" y="126" key="SettingsEditor/0.23.1680.981@0.23.1680.981" timestamp="1609741199835" />
+    <state width="825" height="464" key="XDebugger.FullValuePopup" timestamp="1609245277505">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state width="825" height="464" key="XDebugger.FullValuePopup/0.23.1680.981@0.23.1680.981" timestamp="1609245277505" />
+    <state x="561" y="141" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1609213678951">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="561" y="141" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1680.981@0.23.1680.981" timestamp="1609213678951" />
+    <state x="645" y="227" width="837" height="550" key="find.popup" timestamp="1609749658322">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="645" y="227" width="837" height="550" key="find.popup/0.23.1680.981@0.23.1680.981" timestamp="1609749658322" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/nitro2/main.go</url>
+          <line>56</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/nitro2/main.go</url>
+          <line>38</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
