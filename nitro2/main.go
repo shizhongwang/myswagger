@@ -54,6 +54,7 @@ func main() {
 	chatroommemberDB := data.NewChatroomMembersDB(l)
 	chatroommemberHandler := handlers.NewChatroomMembers(l,chatroommemberDB)
 	router.POST("/chatroom/:chatroomid/member", chatroommemberHandler.Create)
+	router.GET("/chatroom/:chatroomid/member", ph.ListAll)
 
 	router.Run(":8080")
 
