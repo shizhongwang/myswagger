@@ -18,7 +18,7 @@ import (
 //  422: errorValidation
 //  501: errorResponse
 // Create handles POST requests to add new chatroomMembers
-func (p *ChatroomMember) Create(c *gin.Context) {
+func (p *ChatroomMembers) Create(c *gin.Context) {
 	//body中的内容 ioutil.ReadAll 读取过就不存在了, need to re-write into body
 	b, _ := ioutil.ReadAll(c.Request.Body)
 	c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(b))

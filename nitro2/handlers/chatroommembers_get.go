@@ -7,12 +7,12 @@ import (
 )
 
 // swagger:route GET /chatrooms chatrooms listChatroomMembers
-// Return a list of ChatroomMember from the database
+// Return a list of ChatroomMembers from the database
 // responses:
 //	200: chatroomsResponse
 
-// ListAll handles GET requests and returns all current ChatroomMember
-func (p *ChatroomMember) ListAll(c *gin.Context) {
+// ListAll handles GET requests and returns all current ChatroomMembers
+func (p *ChatroomMembers) ListAll(c *gin.Context) {
 	prods, err := p.ChatroomMemberDB.GetChatroomMembers()
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -23,13 +23,13 @@ func (p *ChatroomMember) ListAll(c *gin.Context) {
 }
 
 // swagger:route GET /chatrooms/{id} chatrooms listSingleChatroomMember
-// Return a list of ChatroomMember from the database
+// Return a list of ChatroomMembers from the database
 // responses:
 //	200: chatroomResponse
 //	404: errorResponse
 
 // ListSingle handles GET requests
-func (p *ChatroomMember) ListSingle(c *gin.Context) {
+func (p *ChatroomMembers) ListSingle(c *gin.Context) {
 	chatroomid := c.Param("chatroomid")
 	p.l.Debug("Get record", "chatroomid: ", chatroomid)
 	prod, err := p.ChatroomMemberDB.GetChatroomMembersByChatroomID(chatroomid)

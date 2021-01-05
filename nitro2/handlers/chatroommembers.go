@@ -5,13 +5,13 @@ import (
 	"github.com/shizhongwang/myswagger/nitro2/data"
 )
 
-// ChatroomMember handler for getting and updating ChatroomMember
-type ChatroomMember struct {
+// ChatroomMembers handler for getting and updating ChatroomMembers
+type ChatroomMembers struct {
 	l         hclog.Logger
-	ChatroomMemberDB *data.ChatroomMemberDB
+	ChatroomMemberDB *data.ChatroomMembersDB
 }
 
-// NewChatroomMembers returns a new ChatroomMember handler with the given logger
-func NewChatroomMembers(l hclog.Logger, pdb *data.ChatroomMemberDB) *ChatroomMember {
-	return &ChatroomMember{l, pdb}
+// NewChatroomMembers returns a new ChatroomMembers handler with the given logger
+func NewChatroomMembers(l hclog.Logger, pdb *data.ChatroomMembersDB) *ChatroomMembers {
+	return &ChatroomMembers{l, pdb}
 }
