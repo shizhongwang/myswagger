@@ -28,7 +28,7 @@ func (p *Chatrooms) ListAll(c *gin.Context) {
 //	200: chatroomResponse
 //	404: errorResponse
 
-// ListSingle handles GET requests
+// ListMembersByChatroomID handles GET requests
 func (p *Chatrooms) ListSingle(c *gin.Context) {
 	id := c.Param("id")
 	p.l.Debug("Get record", "id", id)

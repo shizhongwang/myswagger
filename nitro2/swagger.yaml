@@ -47,14 +47,18 @@ definitions:
     - type
     title: ChatroomRequest represents a muc chatroom response.
     type: object
-    x-go-package: github.com/shizhongwang/myswagger/nitro2/chatroom-api/data
-  ChatroomMemeber:
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/data
+  ChatroomMember:
     properties:
       chatroom_id:
         description: the id for the chatroom
         minimum: 1
         type: string
         x-go-name: ChatroomID
+      lastviewed_at:
+        format: date-time
+        type: string
+        x-go-name: LastViewedAt
       role:
         description: |-
           the user role in the chatroom
@@ -72,10 +76,10 @@ definitions:
         x-go-name: UserID
     required:
     - user_id
-    title: ChatroomMemeberRequest represents a muc chatroom response.
+    title: ChatroomMemberRequest represents a muc chatroom response.
     type: object
-    x-go-package: github.com/shizhongwang/myswagger/nitro2/chatroom-member/data
-  ChatroomMemeberRequest:
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/data
+  ChatroomMemberRequest:
     properties:
       role:
         description: |-
@@ -90,9 +94,15 @@ definitions:
         x-go-name: UserID
     required:
     - user_id
-    title: ChatroomMemeberRequest represents a muc chatroom request.
+    title: ChatroomMemberRequest represents a muc chatroom request.
     type: object
-    x-go-package: github.com/shizhongwang/myswagger/nitro2/chatroom-member/data
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/data
+  ChatroomMembers:
+    description: ChatroomMembers defines a slice of ChatroomMemberRequest
+    items:
+      $ref: '#/definitions/ChatroomMember'
+    type: array
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/data
   ChatroomRequest:
     properties:
       display_name:
@@ -122,7 +132,7 @@ definitions:
     - type
     title: ChatroomRequest represents a muc chatroom request.
     type: object
-    x-go-package: github.com/shizhongwang/myswagger/nitro2/chatroom-api/data
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/data
   GenericError:
     description: GenericError is a generic error message returned by a server
     properties:
@@ -130,7 +140,7 @@ definitions:
         type: string
         x-go-name: Message
     type: object
-    x-go-package: github.com/shizhongwang/myswagger/nitro2/chatroom-api/handlers
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/handlers
   ValidationError:
     description: ValidationError is a collection of validation error messages
     properties:
@@ -140,12 +150,77 @@ definitions:
         type: array
         x-go-name: Messages
     type: object
-    x-go-package: github.com/shizhongwang/myswagger/nitro2/chatroom-api/handlers
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/handlers
 info:
   description: Documentation for ChatroomRequest API
   title: of ChatroomRequest API
   version: 1.0.0
 paths:
+  /chatroomMembers:
+    get:
+      description: Return a list of ChatroomMembers from the database
+      operationId: listChatroomMembersAll
+      responses:
+        "200":
+          $ref: '#/responses/chatroomMembersResponse'
+      tags:
+      - chatroomMembers
+    post:
+      description: Create a new chatroomMember
+      operationId: createChatroomMembers
+      parameters:
+      - description: |-
+          ChatroomMembersRequest data structure to Update or Create.
+          Note: the id field is ignored by update and create operations
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/ChatroomMemberRequest'
+      responses:
+        "200":
+          $ref: '#/responses/chatroomMemberResponse'
+        "422":
+          $ref: '#/responses/errorValidation'
+        "501":
+          $ref: '#/responses/errorResponse'
+      tags:
+      - chatroomMembers
+  /chatroomMembers/{chatroomid}:
+    get:
+      description: Return a list of ChatroomMembers from the database
+      operationId: listChatroomMembersByChatroom
+      parameters:
+      - description: The id of the chatroomMember for which the operation relates
+        in: path
+        name: chatroomid
+        required: true
+        type: string
+        x-go-name: ChatroomID
+      responses:
+        "200":
+          $ref: '#/responses/chatroomMembersResponse'
+        "404":
+          $ref: '#/responses/errorResponse'
+      tags:
+      - chatroomMembers
+  /chatroomMembers/{userid}:
+    get:
+      description: Return a list of ChatroomMembers from the database
+      operationId: listChatroomMembersByUserID
+      parameters:
+      - description: By using the userid to search for the list of chatroomMembers,
+        in: path
+        name: UserID
+        required: true
+        type: string
+      responses:
+        "200":
+          $ref: '#/responses/chatroomMembersResponse'
+        "404":
+          $ref: '#/responses/errorResponse'
+      tags:
+      - chatroomMembers
   /chatrooms:
     get:
       description: Return a list of Chatrooms from the database
@@ -249,6 +324,14 @@ paths:
 produces:
 - application/json
 responses:
+  chatroomMemberResponse:
+    description: Data structure representing a single chatroomMember
+    schema:
+      $ref: '#/definitions/ChatroomMember'
+  chatroomMembersResponse:
+    description: A list of chatroomMembers
+    schema:
+      $ref: '#/definitions/ChatroomMembers'
   chatroomResponse:
     description: Data structure representing a single chatroom
     schema:

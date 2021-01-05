@@ -22,6 +22,16 @@ func main() {
 	fmt.Println(guid.Counter()) //随机七位数字
 
 	genXid()
+	genXid()
+	genXid()
+	genXid()
+	genXid()
+	genXid()
+	genXid()
+	genXid()
+	genXid()
+	genXid()
+
 	genKsuid()
 	genBetterGUID()
 	genUlid()

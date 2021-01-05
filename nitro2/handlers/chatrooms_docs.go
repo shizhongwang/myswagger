@@ -23,22 +23,6 @@ import (
 // NOTE: Types defined here are purely for documentation purposes
 // these types are not used by any of the handers
 
-// Generic error message returned as a string
-// swagger:response errorResponse
-type errorResponseWrapper struct {
-	// Description of the error
-	// in: body
-	Body GenericError
-}
-
-// Validation errors defined as an array of strings
-// swagger:response errorValidation
-type errorValidationWrapper struct {
-	// Collection of the errors
-	// in: body
-	Body ValidationError
-}
-
 // A list of chatrooms
 // swagger:response chatroomsResponse
 type chatroomsResponseWrapper struct {
@@ -55,10 +39,6 @@ type chatroomResponseWrapper struct {
 	Body data.Chatroom
 }
 
-// No content is returned by this API endpoint
-// swagger:response noContentResponse
-type noContentResponseWrapper struct {
-}
 
 // swagger:parameters createChatroom
 type chatroomRequestParamsWrapper struct {

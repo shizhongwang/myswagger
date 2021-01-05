@@ -10,7 +10,7 @@ import (
 )
 
 
-// swagger:route POST /chatroomMembers chatroomMembers createChatroom
+// swagger:route POST /chatroomMembers chatroomMembers createChatroomMembers
 // Create a new chatroomMember
 //
 // responses:

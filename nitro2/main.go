@@ -54,7 +54,8 @@ func main() {
 	chatroommemberDB := data.NewChatroomMembersDB(l)
 	chatroommemberHandler := handlers.NewChatroomMembers(l,chatroommemberDB)
 	router.POST("/chatroom/:chatroomid/members", chatroommemberHandler.Create)
-	router.GET("/chatroom/:chatroomid/members", chatroommemberHandler.ListAll)
+	router.GET("/chatroom/members", chatroommemberHandler.ListAll)
+	router.GET("/chatroom/:chatroomid/members", chatroommemberHandler.ListMembersByChatroomID)
 
 	router.Run(":8080")
 
@@ -66,8 +67,8 @@ func main() {
 	//getR.HandleFunc("/chatrooms", ph.ListAll).Queries("currency", "{[A-Z]{3}}")
 	//getR.HandleFunc("/chatrooms", ph.ListAll)
 	//
-	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListSingle).Queries("currency", "{[A-Z]{3}}")
-	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListSingle)
+	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListMembersByChatroomID).Queries("currency", "{[A-Z]{3}}")
+	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListMembersByChatroomID)
 	//
 	//putR := sm.Methods(http.MethodPut).Subrouter()
 	//putR.HandleFunc("/chatrooms", ph.Update)
@@ -152,8 +153,8 @@ func main() {
 //	getR.HandleFunc("/chatrooms", ph.ListAll).Queries("currency", "{[A-Z]{3}}")
 //	getR.HandleFunc("/chatrooms", ph.ListAll)
 //	//
-//	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListSingle).Queries("currency", "{[A-Z]{3}}")
-//	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListSingle)
+//	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListMembersByChatroomID).Queries("currency", "{[A-Z]{3}}")
+//	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListMembersByChatroomID)
 //	//
 //	//putR := sm.Methods(http.MethodPut).Subrouter()
 //	//putR.HandleFunc("/chatrooms", ph.Update)

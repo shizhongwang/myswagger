@@ -59,7 +59,7 @@ func (p *ChatroomMembersDB) GetChatroomMembers() (ChatroomMembers, error) {
 	return pr, nil
 }
 
-// GetChatroomMemberByID returns a single ChatroomMemberRequest which matches the id from the
+// GetChatroomMembersByChatroomID returns a single ChatroomMemberRequest which matches the id from the
 // database.
 // If a ChatroomMemberRequest is not found this function returns a ChatroomMemberNotFound error
 func (p *ChatroomMembersDB) GetChatroomMembersByChatroomID(chatroomID string) (ChatroomMembers, error) {
@@ -73,6 +73,22 @@ func (p *ChatroomMembersDB) GetChatroomMembersByChatroomID(chatroomID string) (C
 
 	return pr, nil
 }
+
+// GetChatroomMembersByUserID returns a single ChatroomMemberRequest which matches the id from the
+// database.
+// If a ChatroomMemberRequest is not found this function returns a ChatroomMemberNotFound error
+func (p *ChatroomMembersDB) GetChatroomMembersByUserID(userID string) (ChatroomMembers, error) {
+	pr := ChatroomMembers{}
+	for _, p := range ChatroomMemberList {
+		np := *p
+		if np.UserID == userID {
+			pr = append(pr, &np)
+		}
+	}
+
+	return pr, nil
+}
+
 
 // UpdateChatroomMember replaces a ChatroomMemberRequest in the database with the given
 // item.

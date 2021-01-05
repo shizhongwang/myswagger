@@ -38,7 +38,7 @@ func (p *Products) ListAll(rw http.ResponseWriter, r *http.Request) {
 //	200: productResponse
 //	404: errorResponse
 
-// ListSingle handles GET requests
+// ListMembersByChatroomID handles GET requests
 func (p *Products) ListSingle(rw http.ResponseWriter, r *http.Request) {
 	rw.Header().Add("Content-Type", "application/json")
 
