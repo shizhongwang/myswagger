@@ -40,9 +40,11 @@ type Chatroom struct {
 	// min: 1
 	ID          	string		`json:"id"`
 	ChatroomRequest
+	CreatorUserID	string	`json:"created_userid,omitempty"`
 	CreatedAt     time.Time	`json:"created_at,omitempty"`
 	UpdatedAt     time.Time	`json:"updated_at,omitempty"`
-	CreatorUserID	string	`json:"created_userid,omitempty"`
+	DeletedAt     time.Time	`json:"deleted_at,omitempty"`
+	LastPostAt    time.Time	`json:"lastpost_at,omitempty"`
 }
 
 // ErrChatroomNotFound is an error raised when a ChatroomRequest can not be found in the database

@@ -79,6 +79,15 @@ definitions:
     title: ChatroomMemberRequest represents a muc chatroom response.
     type: object
     x-go-package: github.com/shizhongwang/myswagger/nitro2/data
+  ChatroomMemberLastViewedAt:
+    description: ChatroomMemberLastViewedAt represents a LastViewedAt update body
+    properties:
+      lastviewed_at:
+        format: date-time
+        type: string
+        x-go-name: LastViewedAt
+    type: object
+    x-go-package: github.com/shizhongwang/myswagger/nitro2/data
   ChatroomMemberRequest:
     properties:
       role:
@@ -165,25 +174,16 @@ paths:
           $ref: '#/responses/chatroomMembersResponse'
       tags:
       - chatroomMembers
-    post:
-      description: AddOrGetMemberByID a new chatroomMember
-      operationId: createChatroomMembers
-      parameters:
-      - description: |-
-          ChatroomMembersRequest data structure to Update or AddOrGetMemberByID.
-          Note: the id field is ignored by update and create operations
-        in: body
-        name: Body
-        required: true
-        schema:
-          $ref: '#/definitions/ChatroomMemberRequest'
+    put:
+      description: Update a chatroomMembers details
+      operationId: updateChatroomMember
       responses:
         "200":
           $ref: '#/responses/chatroomMemberResponse'
+        "404":
+          $ref: '#/responses/errorResponse'
         "422":
           $ref: '#/responses/errorValidation'
-        "501":
-          $ref: '#/responses/errorResponse'
       tags:
       - chatroomMembers
   /chatroomMembers/{chatroomid}:
@@ -219,6 +219,47 @@ paths:
           $ref: '#/responses/chatroomMembersResponse'
         "404":
           $ref: '#/responses/errorResponse'
+      tags:
+      - chatroomMembers
+  /chatroomMembers{chatroomid}:
+    post:
+      description: AddMember a new chatroomMember
+      operationId: createChatroomMembers
+      parameters:
+      - description: |-
+          ChatroomMembersRequest data structure to Update or AddMember.
+          Note: the id field is ignored by update and create operations
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/ChatroomMemberRequest'
+      responses:
+        "200":
+          $ref: '#/responses/chatroomMemberResponse'
+        "422":
+          $ref: '#/responses/errorValidation'
+        "501":
+          $ref: '#/responses/errorResponse'
+      tags:
+      - chatroomMembers
+  /chatroommembers/{chatroomid}/:userid:
+    patch:
+      description: Update a chatroomMembers LastViewedAt field
+      operationId: updateChatroomMemberLastViewAt
+      parameters:
+      - description: Newly created chatroomMember
+        in: body
+        name: Body
+        schema:
+          $ref: '#/definitions/ChatroomMemberLastViewedAt'
+      responses:
+        "200":
+          $ref: '#/responses/chatroomMemberResponse'
+        "404":
+          $ref: '#/responses/errorResponse'
+        "422":
+          $ref: '#/responses/errorValidation'
       tags:
       - chatroomMembers
   /chatrooms:

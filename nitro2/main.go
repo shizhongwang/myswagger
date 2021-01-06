@@ -56,9 +56,11 @@ func main() {
 	router.POST("/chatroommembers/:chatroomid", chatroommemberHandler.AddOrGetMemberByID)
 	router.GET("/chatroommembers", chatroommemberHandler.ListAll)
 	router.GET("/chatroommembers/:chatroomid", chatroommemberHandler.AddOrGetMemberByID)
+	router.GET("/users/:userid/chatroommembers", chatroommemberHandler.GetMembersByUserID)
+
+	router.PATCH("/chatroommembers/:chatroomid/:userid", chatroommemberHandler.UpdateLastViewedAt)
 
 
-	//router.GET("/users/:userid/chatroom/members", chatroommemberHandler.GetMembersByUserID)
 	router.Run(":8080")
 
 	// create a new serve mux and register the handlers

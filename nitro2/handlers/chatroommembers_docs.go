@@ -56,6 +56,15 @@ type chatroomMemberParamsWrapper struct {
 	Body data.ChatroomMembers
 }
 
+// Data structure representing lastviewedat time
+// swagger:parameters updateChatroomMemberLastViewAt
+type chatroomMemberLastViewedAtParamsWrapper struct {
+	// Newly created chatroomMember
+	// in: body
+	Body data.ChatroomMemberLastViewedAt
+}
+
+
 // swagger:parameters listChatroomMembersByUserID
 type chatroomMembersByUserIDQueryParam struct {
 	// By using the userid to search for the list of chatroomMembers,

@@ -20,6 +20,12 @@ type ChatroomMemberRequest struct {
 	Role	string	`json:"role"`
 }
 
+// ChatroomMemberLastViewedAt represents a LastViewedAt update body
+// swagger:model
+type ChatroomMemberLastViewedAt struct {
+	LastViewedAt time.Time	`json:"lastviewed_at,omitempty"`
+}
+
 // ChatroomMemberRequest represents a muc chatroom response.
 // swagger:model
 type ChatroomMember struct {
@@ -89,6 +95,18 @@ func (p *ChatroomMembersDB) GetChatroomMembersByUserID(userID string) (ChatroomM
 	return pr, nil
 }
 
+
+// UpdateChatroomMember replaces a ChatroomMemberRequest in the database with the given
+// item.
+// If a ChatroomMemberRequest with the given id does not exist in the database
+// this function returns a ChatroomMemberNotFound error
+func (p *ChatroomMembersDB) UpdateLastViewedAt(chatroomid string, userid string, lastviewedat time.Time) (*ChatroomMember, error) {
+	i := 1
+	// update the ChatroomMemberRequest in the DB
+	ChatroomMemberList[i].LastViewedAt = lastviewedat
+
+	return ChatroomMemberList[i], nil
+}
 
 // UpdateChatroomMember replaces a ChatroomMemberRequest in the database with the given
 // item.
