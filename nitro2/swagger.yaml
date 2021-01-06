@@ -166,11 +166,11 @@ paths:
       tags:
       - chatroomMembers
     post:
-      description: Create a new chatroomMember
+      description: AddOrGetMemberByID a new chatroomMember
       operationId: createChatroomMembers
       parameters:
       - description: |-
-          ChatroomMembersRequest data structure to Update or Create.
+          ChatroomMembersRequest data structure to Update or AddOrGetMemberByID.
           Note: the id field is ignored by update and create operations
         in: body
         name: Body

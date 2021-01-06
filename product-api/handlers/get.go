@@ -11,7 +11,7 @@ import (
 // responses:
 //	200: productsResponse
 
-// ListAll handles GET requests and returns all current products
+// GetChatroomsAll handles GET requests and returns all current products
 func (p *Products) ListAll(rw http.ResponseWriter, r *http.Request) {
 	p.l.Debug("Get all records")
 	rw.Header().Add("Content-Type", "application/json")
@@ -38,7 +38,7 @@ func (p *Products) ListAll(rw http.ResponseWriter, r *http.Request) {
 //	200: productResponse
 //	404: errorResponse
 
-// ListMembersByChatroomID handles GET requests
+// GetMembersByChatroomID handles GET requests
 func (p *Products) ListSingle(rw http.ResponseWriter, r *http.Request) {
 	rw.Header().Add("Content-Type", "application/json")
 

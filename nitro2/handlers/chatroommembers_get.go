@@ -11,7 +11,7 @@ import (
 // responses:
 //	200: chatroomMembersResponse
 
-// ListAll handles GET requests and returns all current ChatroomMembers
+// GetChatroomsAll handles GET requests and returns all current ChatroomMembers
 func (p *ChatroomMembers) ListAll(c *gin.Context) {
 	prods, err := p.ChatroomMemberDB.GetChatroomMembers()
 	if err != nil {
@@ -28,8 +28,8 @@ func (p *ChatroomMembers) ListAll(c *gin.Context) {
 //	200: chatroomMembersResponse
 //	404: errorResponse
 
-// ListMembersByChatroomID handles GET requests
-func (p *ChatroomMembers) ListMembersByChatroomID(c *gin.Context) {
+// GetMembersByChatroomID handles GET requests
+func (p *ChatroomMembers) GetMembersByChatroomID(c *gin.Context) {
 	chatroomid := c.Param("chatroomid")
 	p.l.Debug("Get record", "chatroomid: ", chatroomid)
 	prod, err := p.ChatroomMemberDB.GetChatroomMembersByChatroomID(chatroomid)
@@ -56,8 +56,8 @@ func (p *ChatroomMembers) ListMembersByChatroomID(c *gin.Context) {
 //	200: chatroomMembersResponse
 //	404: errorResponse
 
-// ListMembersByChatroomID handles GET requests
-func (p *ChatroomMembers) ListMembersByUserID(c *gin.Context) {
+// GetMembersByChatroomID handles GET requests
+func (p *ChatroomMembers) GetMembersByUserID(c *gin.Context) {
 	userid := c.Param("userid")
 	p.l.Debug("Get record", "userid: ", userid)
 	prod, err := p.ChatroomMemberDB.GetChatroomMembersByUserID(userid)

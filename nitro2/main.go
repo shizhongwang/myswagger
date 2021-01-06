@@ -46,17 +46,19 @@ func main() {
 	router.POST("/chatrooms", ph.Create)
 	router.PUT("/chatrooms", ph.Update)
 	router.DELETE("/chatrooms/:id", ph.Delete)
-	router.GET("/chatrooms", ph.ListAll)
-	router.GET("/chatrooms/:id", ph.ListSingle)
+	router.GET("/chatrooms", ph.GetChatroomsAll)
+	router.GET("/chatrooms/:id", ph.GetChatroomByID)
 
 //http://your-mattermost-url.com/api/v4/channels/{channel_id}/members
 
 	chatroommemberDB := data.NewChatroomMembersDB(l)
 	chatroommemberHandler := handlers.NewChatroomMembers(l,chatroommemberDB)
-	router.POST("/chatroom/:chatroomid/members", chatroommemberHandler.Create)
-	router.GET("/chatroom/members", chatroommemberHandler.ListAll)
-	router.GET("/chatroom/:chatroomid/members", chatroommemberHandler.ListMembersByChatroomID)
+	router.POST("/chatroommembers/:chatroomid", chatroommemberHandler.AddOrGetMemberByID)
+	router.GET("/chatroommembers", chatroommemberHandler.ListAll)
+	router.GET("/chatroommembers/:chatroomid", chatroommemberHandler.AddOrGetMemberByID)
 
+
+	//router.GET("/users/:userid/chatroom/members", chatroommemberHandler.GetMembersByUserID)
 	router.Run(":8080")
 
 	// create a new serve mux and register the handlers
@@ -64,18 +66,18 @@ func main() {
 
 	//// handlers for API
 	getR := sm.Methods(http.MethodGet).Subrouter()
-	//getR.HandleFunc("/chatrooms", ph.ListAll).Queries("currency", "{[A-Z]{3}}")
-	//getR.HandleFunc("/chatrooms", ph.ListAll)
+	//getR.HandleFunc("/chatrooms", ph.GetChatroomsAll).Queries("currency", "{[A-Z]{3}}")
+	//getR.HandleFunc("/chatrooms", ph.GetChatroomsAll)
 	//
-	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListMembersByChatroomID).Queries("currency", "{[A-Z]{3}}")
-	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListMembersByChatroomID)
+	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.GetMembersByChatroomID).Queries("currency", "{[A-Z]{3}}")
+	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.GetMembersByChatroomID)
 	//
 	//putR := sm.Methods(http.MethodPut).Subrouter()
 	//putR.HandleFunc("/chatrooms", ph.Update)
 	//putR.Use(ph.MiddlewareValidatechatroom)
 
 	//postR := sm.Methods(http.MethodPost).Subrouter()
-	//postR.HandleFunc("/chatrooms", ph.Create)
+	//postR.HandleFunc("/chatrooms", ph.AddMember)
 	//postR.Use(ph.MiddlewareValidatechatroom)
 
 	//deleteR := sm.Methods(http.MethodDelete).Subrouter()
@@ -150,18 +152,18 @@ func main() {
 //
 //	// handlers for API
 //	getR := sm.Methods(http.MethodGet).Subrouter()
-//	getR.HandleFunc("/chatrooms", ph.ListAll).Queries("currency", "{[A-Z]{3}}")
-//	getR.HandleFunc("/chatrooms", ph.ListAll)
+//	getR.HandleFunc("/chatrooms", ph.GetChatroomsAll).Queries("currency", "{[A-Z]{3}}")
+//	getR.HandleFunc("/chatrooms", ph.GetChatroomsAll)
 //	//
-//	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListMembersByChatroomID).Queries("currency", "{[A-Z]{3}}")
-//	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.ListMembersByChatroomID)
+//	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.GetMembersByChatroomID).Queries("currency", "{[A-Z]{3}}")
+//	//getR.HandleFunc("/chatrooms/{id:[0-9]+}", ph.GetMembersByChatroomID)
 //	//
 //	//putR := sm.Methods(http.MethodPut).Subrouter()
 //	//putR.HandleFunc("/chatrooms", ph.Update)
 //	//putR.Use(ph.MiddlewareValidatechatroom)
 //
 //	postR := sm.Methods(http.MethodPost).Subrouter()
-//	postR.HandleFunc("/chatrooms", ph.Create)
+//	postR.HandleFunc("/chatrooms", ph.AddMember)
 //	//postR.Use(ph.MiddlewareValidatechatroom)
 //
 //	//deleteR := sm.Methods(http.MethodDelete).Subrouter()

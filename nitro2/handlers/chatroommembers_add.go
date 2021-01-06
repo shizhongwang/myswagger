@@ -9,16 +9,15 @@ import (
 	"time"
 )
 
-
-// swagger:route POST /chatroomMembers chatroomMembers createChatroomMembers
-// Create a new chatroomMember
+// swagger:route POST /chatroomMembers{chatroomid} chatroomMembers createChatroomMembers
+// AddMember a new chatroomMember
 //
 // responses:
 //	200: chatroomMemberResponse
 //  422: errorValidation
 //  501: errorResponse
-// Create handles POST requests to add new chatroomMembers
-func (p *ChatroomMembers) Create(c *gin.Context) {
+// AddMember handles POST requests to add new chatroomMembers
+func (p *ChatroomMembers) AddMember(c *gin.Context) {
 	//body中的内容 ioutil.ReadAll 读取过就不存在了, need to re-write into body
 	b, _ := ioutil.ReadAll(c.Request.Body)
 	c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(b))
@@ -34,14 +33,20 @@ func (p *ChatroomMembers) Create(c *gin.Context) {
 
 	chatroomid := c.Param("chatroomid")
 	cr := &data.ChatroomMember{
-		ChatroomMemberRequest: data.ChatroomMemberRequest{
-			UserID: "3",
-			Role: "admin",
-		},
+		ChatroomMemberRequest: json,
 		ChatroomID: chatroomid,
-		UpdatedAt: time.Now(),
+		UpdatedAt:  time.Now(),
 	}
 
 	p.ChatroomMemberDB.AddChatroomMember(cr)
 	c.JSON(http.StatusOK, cr)
+}
+
+
+func (p *ChatroomMembers) AddOrGetMemberByID(c *gin.Context) {
+	if c.Request.Method == "POST" {
+		p.AddMember(c)
+	} else if c.Request.Method == "GET" {
+		p.GetMembersByChatroomID(c)
+	}
 }

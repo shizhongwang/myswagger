@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0165f36b-3fee-4e3b-b7e6-4d79328deeb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nitro2/handlers/chatroommember_get.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nitro2/handlers/c-get.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/handlers/c-get.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nitro2/handlers/chatroom_update.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/handlers/chatroom_update.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_add.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_add.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_docs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_get.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_get.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitro2/handlers/chatrooms_get.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/handlers/chatrooms_get.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nitro2/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitro2/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/swagger.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/handlers/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/handlers/docs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/handlers/get.go" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/handlers/get.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/handlers/post.go" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/handlers/post.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,8 +118,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build github.com/shizhongwang/myswagger/nitro2" />
-        <item itemvalue="Go Build.go build github.com/shizhongwang/myswagger/chatroom-api (2)" />
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build github.com/shizhongwang/myswagger/chatroom-api (2)" />
         <item itemvalue="Go Build.go build github.com/shizhongwang/myswagger/chatroom-api (1)" />
         <item itemvalue="Go Build.go build github.com/shizhongwang/myswagger/chatroom-api" />
       </list>
@@ -162,22 +168,22 @@
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="580" y="259" key="EnvironmentVariablesDialog/0.23.1680.981@0.23.1680.981" timestamp="1609204004981" />
-    <state width="1609" height="181" key="GridCell.Tab.0.bottom" timestamp="1609806358623">
+    <state width="1609" height="181" key="GridCell.Tab.0.bottom" timestamp="1609895965758">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
-    <state width="1609" height="181" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1609806358623" />
-    <state width="1609" height="181" key="GridCell.Tab.0.center" timestamp="1609806358621">
+    <state width="1609" height="181" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1609895965758" />
+    <state width="1609" height="181" key="GridCell.Tab.0.center" timestamp="1609895965757">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
-    <state width="1609" height="181" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1609806358621" />
-    <state width="1609" height="181" key="GridCell.Tab.0.left" timestamp="1609806358620">
+    <state width="1609" height="181" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1609895965757" />
+    <state width="1609" height="181" key="GridCell.Tab.0.left" timestamp="1609895965757">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
-    <state width="1609" height="181" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1609806358620" />
-    <state width="1609" height="181" key="GridCell.Tab.0.right" timestamp="1609806358622">
+    <state width="1609" height="181" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1609895965757" />
+    <state width="1609" height="181" key="GridCell.Tab.0.right" timestamp="1609895965758">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
-    <state width="1609" height="181" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1609806358622" />
+    <state width="1609" height="181" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1609895965758" />
     <state width="1609" height="306" key="GridCell.Tab.1.bottom" timestamp="1609291615003">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
@@ -210,10 +216,10 @@
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="561" y="141" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1680.981@0.23.1680.981" timestamp="1609213678951" />
-    <state x="645" y="227" width="837" height="550" key="find.popup" timestamp="1609749658322">
+    <state x="645" y="227" width="837" height="550" key="find.popup" timestamp="1609827661652">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
-    <state x="645" y="227" width="837" height="550" key="find.popup/0.23.1680.981@0.23.1680.981" timestamp="1609749658322" />
+    <state x="645" y="227" width="837" height="550" key="find.popup/0.23.1680.981@0.23.1680.981" timestamp="1609827661652" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

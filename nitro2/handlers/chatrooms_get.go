@@ -11,8 +11,8 @@ import (
 // responses:
 //	200: chatroomsResponse
 
-// ListAll handles GET requests and returns all current Chatrooms
-func (p *Chatrooms) ListAll(c *gin.Context) {
+// GetChatroomsAll handles GET requests and returns all current Chatrooms
+func (p *Chatrooms) GetChatroomsAll(c *gin.Context) {
 	prods, err := p.ChatroomDB.GetChatrooms()
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -28,8 +28,8 @@ func (p *Chatrooms) ListAll(c *gin.Context) {
 //	200: chatroomResponse
 //	404: errorResponse
 
-// ListMembersByChatroomID handles GET requests
-func (p *Chatrooms) ListSingle(c *gin.Context) {
+// GetChatroomByID handles GET requests
+func (p *Chatrooms) GetChatroomByID(c *gin.Context) {
 	id := c.Param("id")
 	p.l.Debug("Get record", "id", id)
 	prod, err := p.ChatroomDB.GetChatroomByID(id)

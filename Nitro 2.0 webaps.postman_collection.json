@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "08bb3ee7-a643-4028-b6b4-e9d01433601e",
+		"name": "Nitro 2.0 webaps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "chatroommembers",
+			"item": [
+				{
+					"name": "create chatroom member",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": \"1\",\n  \"role\": \"speaker\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/chatroommembers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chatroommembers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get chatroom members by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/chatroommembers/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chatroommembers",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get chatroom members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/chatroommembers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chatroommembers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chatrooms",
+			"item": [
+				{
+					"name": "create chatroom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"display_name\": \"string\",\n  \"enabled\": true,\n  \"header\": \"string\",\n  \"name\": \"string\",\n  \"purpose\": \"string\",\n  \"type\": \"string\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9090/chatrooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"chatrooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a chatroom",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 1,\n        \"enabled\": false,\n        \"name\": \"chatroom01 updated_at\",\n        \"display_name\": \"Display name test1\",\n        \"type\": \"\",\n        \"created_at\": \"0001-01-01T00:00:00Z\",\n        \"updated_at\": \"0001-01-01T00:00:00Z\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/chatrooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chatrooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get chatrooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/chatrooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chatrooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one chatroom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/chatrooms/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chatrooms",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del one chatroom",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/chatrooms/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chatrooms",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mm - get chatrooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.35.63.164/api/v4/channels",
+					"protocol": "http",
+					"host": [
+						"10",
+						"35",
+						"63",
+						"164"
+					],
+					"path": [
+						"api",
+						"v4",
+						"channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mm webhook income",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"text\": \"income string\"\n}"
+				},
+				"url": {
+					"raw": "http://10.35.63.164/hooks/1iy56dup3pddfmncyzdzw3hawr",
+					"protocol": "http",
+					"host": [
+						"10",
+						"35",
+						"63",
+						"164"
+					],
+					"path": [
+						"hooks",
+						"1iy56dup3pddfmncyzdzw3hawr"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

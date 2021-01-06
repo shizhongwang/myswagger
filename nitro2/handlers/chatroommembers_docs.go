@@ -41,7 +41,7 @@ type chatroomMemberResponseWrapper struct {
 
 // swagger:parameters createChatroomMembers
 type chatroomMemberRequestParamsWrapper struct {
-	// ChatroomMembersRequest data structure to Update or Create.
+	// ChatroomMembersRequest data structure to Update or AddMember.
 	// Note: the id field is ignored by update and create operations
 	// in: body
 	// required: true

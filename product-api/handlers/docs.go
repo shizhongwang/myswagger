@@ -60,7 +60,7 @@ type noContentResponseWrapper struct {
 
 // swagger:parameters updateProduct createProduct
 type productParamsWrapper struct {
-	// Product data structure to Update or Create.
+	// Product data structure to Update or AddMember.
 	// Note: the id field is ignored by update and create operations
 	// in: body
 	// required: true
