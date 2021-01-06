@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0165f36b-3fee-4e3b-b7e6-4d79328deeb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_update.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_patch.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nitro2/data/chatroom.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/data/chatroom.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nitro2/data/chatroommember.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/data/chatroommember.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_docs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_update.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/handlers/chatroommembers_update.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nitro2/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nitro2/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/nitro2/swagger.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,19 +50,19 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/nitro2" />
-      <recent name="$PROJECT_DIR$/nitro2/chatroom-api/handlers" />
-      <recent name="$PROJECT_DIR$/nitro2/chatroom-api/data" />
-      <recent name="$PROJECT_DIR$/Nitro2/chatroom-member/handlers" />
-      <recent name="$PROJECT_DIR$/Nitro2" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/nitro2/handlers" />
       <recent name="$PROJECT_DIR$/chatroom-member" />
       <recent name="$PROJECT_DIR$/chatroom-api/handlers" />
       <recent name="$PROJECT_DIR$/chatroom-api/data" />
       <recent name="$PROJECT_DIR$/chatroom-api" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/nitro2" />
+      <recent name="$PROJECT_DIR$/nitro2/chatroom-api/handlers" />
+      <recent name="$PROJECT_DIR$/nitro2/chatroom-api/data" />
+      <recent name="$PROJECT_DIR$/Nitro2/chatroom-member/handlers" />
+      <recent name="$PROJECT_DIR$/Nitro2" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build github.com/shizhongwang/myswagger/nitro2">

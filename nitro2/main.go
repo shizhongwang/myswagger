@@ -49,15 +49,12 @@ func main() {
 	router.GET("/chatrooms", ph.GetChatroomsAll)
 	router.GET("/chatrooms/:id", ph.GetChatroomByID)
 
-//http://your-mattermost-url.com/api/v4/channels/{channel_id}/members
-
 	chatroommemberDB := data.NewChatroomMembersDB(l)
 	chatroommemberHandler := handlers.NewChatroomMembers(l,chatroommemberDB)
 	router.POST("/chatroommembers/:chatroomid", chatroommemberHandler.AddOrGetMemberByID)
 	router.GET("/chatroommembers", chatroommemberHandler.ListAll)
 	router.GET("/chatroommembers/:chatroomid", chatroommemberHandler.AddOrGetMemberByID)
 	router.GET("/users/:userid/chatroommembers", chatroommemberHandler.GetMembersByUserID)
-
 	router.PATCH("/chatroommembers/:chatroomid/:userid", chatroommemberHandler.UpdateLastViewedAt)
 
 
